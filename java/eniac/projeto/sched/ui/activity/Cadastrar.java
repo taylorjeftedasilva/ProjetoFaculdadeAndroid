@@ -28,7 +28,7 @@ public class Cadastrar  extends AppCompatActivity {
         // end
 
         instanciaVariaveis();
-        //esculta evento de clique no botão de cadastro.
+        //escuta evento de clique no botão de cadastro.
         botao_cadatrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class Cadastrar  extends AppCompatActivity {
             }
         });
         //end
-        // esculta evento de clique no textview de login
+        // escuta evento de clique no textview de login
         retornar_login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
