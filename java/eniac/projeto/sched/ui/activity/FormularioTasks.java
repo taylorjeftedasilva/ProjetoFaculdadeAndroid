@@ -25,12 +25,16 @@ public class FormularioTasks extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String textoDaTarefa = tarefa.getText().toString();
-                Tarefa tarefa = new Tarefa(textoDaTarefa);
-                dao.salva(tarefa);
-                finish();
+                NovaTarefa(tarefa, dao);
             }
         });
 
+    }
+
+    private void NovaTarefa(EditText tarefa, FormularioDao dao) {
+        String textoDaTarefa = tarefa.getText().toString();
+        Tarefa task = new Tarefa(textoDaTarefa);
+        dao.salva(task);
+        finish();
     }
 }
