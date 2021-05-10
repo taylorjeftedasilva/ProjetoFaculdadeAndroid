@@ -32,7 +32,7 @@ public class Cadastrar  extends AppCompatActivity {
         botao_cadatrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                salvaNovoUsuario(banco_sched);
+                salvaNovoUsuario();
             }
         });
         //end
@@ -51,7 +51,7 @@ public class Cadastrar  extends AppCompatActivity {
         botao_cadatrar = findViewById(R.id.activity_efetuar_cadastro);
     }
 
-    private void salvaNovoUsuario(BancoDeDados banco_sched) {
+    private void salvaNovoUsuario() {
         Usuario novoUsuario = criaUsuario();
         banco_sched.adicionarUsuario(novoUsuario);
         Toast.makeText(Cadastrar.this, "Novo usuario salvo com sucesso!", Toast.LENGTH_SHORT).show();

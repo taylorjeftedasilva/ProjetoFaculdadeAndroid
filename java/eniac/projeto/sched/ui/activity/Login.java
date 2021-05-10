@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
         botao_criar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(usuarioTXT, senhaTXT, erro);
+                login();
             }
         });
         cadastrar.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
         senhaTXT = findViewById(R.id.activity_senha);
     }
 
-    private void login(EditText usuarioTXT, EditText senhaTXT, TextView erro) {
+    private void login() {
         Usuario usuario = new Usuario(usuarioTXT.getText().toString(), senhaTXT.getText().toString());
         BancoDeDados bd = new BancoDeDados(Login.this);
         try{

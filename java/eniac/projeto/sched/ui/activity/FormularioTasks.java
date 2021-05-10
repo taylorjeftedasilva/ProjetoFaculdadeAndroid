@@ -14,24 +14,34 @@ import eniac.projeto.sched.model.Tarefa;
 
 public class FormularioTasks extends AppCompatActivity {
 
+    private FormularioDao dao;
+    private EditText tarefa;
+    private Button botao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_tasks);
-        FormularioDao dao = new FormularioDao();
-        final EditText tarefa = findViewById(R.id.activity_formulario_tarefa);
-        Button botao = findViewById(R.id.activity_formulario_botao);
+
+        instanciaVariaveis();
+
         botao.setBackgroundColor(Color.rgb(0,204,102));
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NovaTarefa(tarefa, dao);
+                NovaTarefa();
             }
         });
 
     }
 
-    private void NovaTarefa(EditText tarefa, FormularioDao dao) {
+    private void instanciaVariaveis() {
+        dao = new FormularioDao();
+        tarefa = findViewById(R.id.activity_formulario_tarefa);
+        botao = findViewById(R.id.activity_formulario_botao);
+    }
+
+    private void NovaTarefa() {
         String textoDaTarefa = tarefa.getText().toString();
         Tarefa task = new Tarefa(textoDaTarefa);
         dao.salva(task);
